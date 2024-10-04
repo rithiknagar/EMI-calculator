@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="script.js"></script>
+</head> 
+<body onload="bodyload()">
+    <nav class=" btn-toolbar bg-danger justify-content-between  text-white ">
+        <div class="btn-group">
+            <button class="btn btn-danger"><h2 id="date"></h2></button>
+        </div>
+        <div class="btn-group"> <button class="btn btn-danger"><h1>EMI Calculator</h1></button></div>
+        <div class="btn-group">
+            <button class="btn btn-danger"><span class="fa fa-clock-o" style="font-size:36px"></span></button>
+           <button > <h2 id="time"></h2></button>
+        </div>
+        </nav>
+    <div class="row mt-4">
+        <div class="col">
+            <div  class="input-group">
+                <span class="input-group-text">Amount You need &#8377;</span>
+                <input type="number" id="amount" class="form-control" min="50000" max="1000000">
+            </div>
+        </div>
+        <div class="col">
+            <div class="input-group">
+            <span class="input-group-text">for </span>
+            <input type="number" id="year" min="1" max="5" size="4" class="form-control">
+            <span class="input-group-text">years</span>
+            </div>
+        </div> 
+        <div class="col">
+            <div class="input-group">
+                <span class="input-group-text">Interest rate </span>
+                <input type="number" id="rate" size="4" min="10" max="18" step="0.1" class="form-control">
+                <span class="input-group-text">% </span>
+            </div>    
+        </div>
+    </div>
+    <div class="row mt-4">
+    <div class="col">
+     <div class="row">  
+        <div class="col">  <span class="input-group-text"> &#8377; 50000</span> </div>
+        <div class="col"><input type="range" onchange="changeamount()" id="rangeamount" value="50000" class="form-range" min="50000" max="1000000"></div>
+           <div class="col"><span class="input-group-text"> &#8377; 1000000</span></div>     
+     </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col" > <span class="input-group-text">1 Year</span> </div>
+                <div class="col" >  <input type="range" onchange="changeyear()" id="rangeyear" value="1" class="form-range"  min="1" max="5"></div>
+                <div class="col" > <span class="input-group-text">5 Years</span> </div>
+            </div>
+        </div>  
+            <div class="col">
+               <div class="row">
+                <div class="col" > <span class="input-group-text">10 %</span></div>
+                    <div class="col" > <input type="range" onchange="changerate()" step="0.1" id="rangerate" value="10" class="form-range" min="10" max="18"></div>
+                    <div class="col" > <span class="input-group-text">18 %</span></div>
+               </div>
+                </div>
+            </div>
+    <button class="btn btn-primary mt-4 " onclick="calculate()">Calculate</button>
+    <div class=" text-center text-white mt-3 p-2">
+        <h1 id="result"></h1>
+    </div>
+    <div class=" text-center text-white  p-2">
+        <h1 id="result2"></h1>
+    </div>
+    <div class=" text-center text-white  p-2">
+        <h1 id="result3"></h1>
+    </div>
+</body>
+</html>
